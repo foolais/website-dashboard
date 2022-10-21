@@ -1,0 +1,184 @@
+@media screen and (max-width: 1200px) and (min-width: 769px) {
+    .container {
+        width: 94%;
+        grid-template-columns: 5rem auto 24rem;
+    }
+    .header-nav .logo h2,
+    .main-nav h3,
+    .main-nav .message-count {
+        display: none;
+    }
+
+    nav .header-nav { justify-content: center; }
+    
+    nav .header-nav,
+    nav .main-nav {
+        width: 5rem;
+    }
+    nav .main-nav a {
+        margin-left: 0;
+        justify-content: center;
+        gap: 0;
+        position: relative;
+    }
+    nav .main-nav a.active:before {
+        position: absolute;
+        left: 0;
+    }
+    nav .main-nav a.active span { margin-right: calc(1rem - 3px); }
+
+    /* MAIN */
+    main .main-card {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    main .main-orders {
+        width: 94%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 2rem 0 0 7rem;
+    }
+    main .main-orders h2,
+    main .main-orders a { 
+        text-align: center;
+        margin-right: 7rem;
+    }
+
+    main .main-orders table { width: 85vw; }
+
+    main .main-orders table thead tr td:first-child,
+    main .main-orders table tbody tr td:first-child {
+        display: none;
+    }
+
+    main .main-orders table tr td { 
+        width: 1rem;
+    }
+}
+
+/* media query small */
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        position: fixed;
+        left: -100%;
+        background: var(--color-light);
+        width: 18rem;
+        z-index: 3;
+        height: 100vh;
+        animation: showMenu 400ms ease forwards;
+    }
+
+    @keyframes showMenu {
+        to{
+            left: 0;
+        }
+    }
+
+    nav .header-nav h2,
+    nav .main-nav h3,
+    nav .main-nav .message-count {
+        display: inline;
+    }
+
+    nav .header-nav .logo {margin-left: 2rem;}
+
+    nav .main-nav a { height: 3.3rem;}
+
+    nav .header-nav .close {
+        display: inline-block;
+        cursor: pointer;
+        margin-right: 1rem;
+    }
+
+    main {
+        margin-top: 7rem;
+        padding: 0 1rem;
+        width: 98%;
+    }
+
+    main h1,
+    main .date { 
+        display: block;
+        text-align: center;
+    }
+
+    main .main-card {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    main .main-orders {
+        position: relative;
+        margin: 3rem auto 0;
+    }
+
+    main .main-orders table {
+        width: 100%;
+        margin: 0;
+    }
+
+    main .main-orders h2 { text-align: center;}
+
+    main .main-orders table thead tr td:first-child,
+    main .main-orders table tbody tr td:first-child {
+        display: none;
+    }
+
+    .right {
+        width: 96%;
+        margin: 0 auto 4rem;
+    }
+
+    .right .top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        align-items: center;
+        padding: 1rem;
+        background-color: var(--color-light);
+        height: 4.5rem;
+        width: 100%;
+        z-index: 2;
+        margin: 0;
+    }
+
+    .right .top .theme-toogle {
+        background: var(--color-info-light);
+        position: absolute;
+        left: 67%;
+    }
+    
+    .right .top .profile .info { display: none; }
+    
+    .right .top .profile .profile-photo { margin-right:3rem; }
+
+    .right .top button {
+        display: inline-block;
+        cursor: pointer;
+        background: var(--color-light);
+        position: absolute;
+        left: 1rem;
+        top: 30%;
+    }
+
+    .right .top button span { font-size: 2rem; }
+
+    .right .recent-update h2,
+    .right .sales-analytics h2 {
+        text-align: center;
+        margin: 1rem 0;
+    }
+
+    .right .recent-update .update {
+        justify-content: center;
+    }
+
+}
